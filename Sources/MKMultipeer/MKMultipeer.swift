@@ -1,10 +1,9 @@
 //
 //  MKMultipeer.swift
-//  Example
+//
 //
 //  Created by Marco Pilloni on 29/03/2020.
-//  Copyright © 2020 Marco Pilloni. All rights reserved.
-//
+// 
 
 import Foundation
 import MultipeerConnectivity
