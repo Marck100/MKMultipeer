@@ -1,8 +1,9 @@
 //
-//  NearbyServiceAdvertiserDelegate.swift
-//  
+//  MCNearbyServiceAdvertiserDelegate.swift
+//  Example
 //
 //  Created by Marco Pilloni on 29/03/2020.
+//  Copyright © 2020 Marco Pilloni. All rights reserved.
 //
 
 import Foundation
@@ -22,14 +23,14 @@ final class NearbyServiceAdvertiserDelegate: NSObject, MCNearbyServiceAdvertiser
         
         NSLog("%@", "didReceiveInvitationFromPeer: \(peerID.displayName)")
         
-        invitationHandler(true, parent?.session)
+        invitationHandler(true, parent!.session)
         
     }
     
     func advertiser(_ advertiser: MCNearbyServiceAdvertiser, didNotStartAdvertisingPeer error: Error) {
         
         NSLog("%@", "didNotStartAdvertisingPeer with error: \(error.localizedDescription)")
-        parent?.delegate?.didFailWithError(error)
+        parent!.delegate?.didFailWithError(error)
         
     }
     

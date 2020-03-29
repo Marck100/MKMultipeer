@@ -1,8 +1,9 @@
 //
 //  NearbyServiceBrowserDelegate.swift
-//  
+//  Example
 //
 //  Created by Marco Pilloni on 29/03/2020.
+//  Copyright © 2020 Marco Pilloni. All rights reserved.
 //
 
 import Foundation
@@ -32,13 +33,13 @@ final class NearbyServiceBrowserDelegate: NSObject, MCNearbyServiceBrowserDelega
     
     func browser(_ browser: MCNearbyServiceBrowser, lostPeer peerID: MCPeerID) {
         NSLog("%@", "lostPeer: \(peerID)")
-        parent?.delegate?.lostPeer(peerID)
+        parent!.delegate?.lostPeer(peerID)
     }
     
     func browser(_ browser: MCNearbyServiceBrowser, didNotStartBrowsingForPeers error: Error) {
         
         NSLog("%@", "didNotStartBrowsingForPeers with error: \(error.localizedDescription)")
-        parent?.delegate?.didFailWithError(error)
+        parent!.delegate?.didFailWithError(error)
         
     }
     

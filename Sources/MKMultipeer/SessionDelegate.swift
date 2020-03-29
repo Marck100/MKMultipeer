@@ -1,16 +1,17 @@
 //
 //  SessionDelegate.swift
-//
+//  Example
 //
 //  Created by Marco Pilloni on 29/03/2020.
+//  Copyright © 2020 Marco Pilloni. All rights reserved.
 //
 
 import Foundation
 import MultipeerConnectivity
 
-internal final class SessionDelegate: NSObject, MCSessionDelegate {
+final class SessionDelegate: NSObject, MCSessionDelegate {
     
-    internal weak var parent: MKMultipeer?
+    weak var parent: MKMultipeer?
     
     init(parent: MKMultipeer) {
         
@@ -19,8 +20,8 @@ internal final class SessionDelegate: NSObject, MCSessionDelegate {
     }
     
     func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
-        
-        parent?.delegate?.peerDidChange(state)
+    
+        parent!.delegate?.peerDidChange(state)
         
         switch state {
         case .connected:
