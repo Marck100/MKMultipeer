@@ -36,7 +36,7 @@ public final class MKMultipeer: NSObject {
         let delegate = SessionDelegate(parent: self)
         
         let session = MCSession(peer: me, securityIdentity: nil, encryptionPreference: encryptingPreference)
-        session.delegate = sessionDelegate//self
+        session.delegate = sessionDelegate
         
         return session
         
@@ -87,7 +87,9 @@ public final class MKMultipeer: NSObject {
         browser!.delegate = nearbyServiceBrowserDelegate
         browser!.startBrowsingForPeers()
         
+        #if DEBUG
         NSLog("%@", "StartBrowsingForPeers")
+        #endif
         
     }
     
@@ -99,7 +101,9 @@ public final class MKMultipeer: NSObject {
         advertiser!.delegate = nearbyServiceAdvertiserDelegate
         advertiser!.startAdvertisingPeer()
         
+        #if DEBUG
         NSLog("%@", "StartAdvertisingPeer")
+        #endif
         
     }
     

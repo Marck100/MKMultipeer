@@ -20,12 +20,14 @@ final class NearbyServiceBrowserDelegate: NSObject, MCNearbyServiceBrowserDelega
     
     func browser(_ browser: MCNearbyServiceBrowser, foundPeer peerID: MCPeerID, withDiscoveryInfo info: [String : String]?) {
         
+        #if DEBUG
         NSLog("%@", "foundPeer: \(peerID.displayName)")
-        
+        #endif
         parent?.delegate?.foundPeer(peerID)
         
+        #if DEBUG
         NSLog("%@", "invitePeer: \(peerID.displayName)")
-        
+        #endif
         browser.invitePeer(peerID, to: parent!.session, withContext: nil, timeout: 10.0)
         
     }
