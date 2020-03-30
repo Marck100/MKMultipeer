@@ -20,7 +20,7 @@ public final class MKMultipeer: NSObject {
     //MARK: Property
     
     /// Current Device's PeerID
-    private let me = MCPeerID(displayName: UIDevice.current.name)
+    private let me: MCPeerID!
     
     private let serviceType: String
     
@@ -57,10 +57,12 @@ public final class MKMultipeer: NSObject {
     
     //MARK: LifeCycle
     
-    public init(serviceType: String, encryptingPreference: MCEncryptionPreference = .required) {
+    public init(me: MCPeerID, serviceType: String, encryptingPreference: MCEncryptionPreference = .required) {
         
         self.serviceType = serviceType
         self.encryptingPreference = encryptingPreference
+        
+        self.me = me
         
         super.init()
         
